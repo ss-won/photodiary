@@ -6,15 +6,15 @@ import SearchInput from './SearchInput';
 import Feed from './Feed';
 
 function App() {
-  return (
-    <div className="App">
-      <Menubar />
-      <body>
-        <SearchInput />
-        <Feed />
-      </body>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Menubar />
+            <body>
+                <SearchInput />
+                <Feed />
+            </body>
+        </div>
+    );
 }
 
 export default App;
