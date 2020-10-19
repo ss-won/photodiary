@@ -1,19 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-//import './App.css';
-import Menubar from './Menubar';
 import SearchInput from './SearchInput';
 import Feed from './Feed';
+import Menubar from './Menubar';
+import Root from './routes/root';
 
 function App() {
     return (
-        <div className="App">
-            <Menubar />
-            <body>
-                <SearchInput />
-                <Feed />
-            </body>
-        </div>
+        <Root>
+            <div className="App">
+                <Menubar />
+                <body>
+                    <SearchInput />
+                    <Feed />
+                </body>
+            </div>
+        </Root>
     );
 }
 

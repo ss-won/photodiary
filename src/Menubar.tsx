@@ -1,18 +1,25 @@
-import React from 'react';
+import * as React from 'react';
+import { Link } from 'react-router-dom';
 
-function Menubar() {
+const Menubar: React.FC = () => {
     return (
-        <header>
+        <div>
             <ul>
                 <li>
-                    <img src="snowball.png" />
+                    <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <a href="#">로그인</a>
+                    <Link to="/mypage">Mypage</Link>
+                </li>
+                <li>
+                    <Link to="/login">login</Link>
+                </li>
+                <li>
+                    <Link to="/upload">upload</Link>
                 </li>
             </ul>
-        </header>
+        </div>
     );
-}
+};
 
 export default Menubar;
