@@ -10,6 +10,7 @@ const diaries = [
         name: '덕질',
     },
 ];
+
 type diaryProps = {
     id: string;
     name: string;

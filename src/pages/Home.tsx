@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Feed from '../Feed';
-import Menubar from '../Menubar';
-import SearchInput from '../SearchInput';
+import Feed from '../Components/Feed';
+import Menubar from '../Components/Menubar';
+import SearchInput from '../Components/SearchInput';
 
-const Home: React.FC = () => {
+function Home() {
     return (
         <div>
             <h2>HOME</h2>
@@ -12,5 +12,5 @@ const Home: React.FC = () => {
             <Feed />
         </div>
     );
-};
+}
 export default Home;

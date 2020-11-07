@@ -1,6 +1,9 @@
 import * as React from 'react';
+import UploadFrame from '../Components/UploadFrame';
+import { Provider } from '../InputReducer';
 
 // https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types
+/* =============File 유효성 검사============ */
 const fileTypes = [
     'image/apng',
     'image/bmp',
@@ -17,8 +20,10 @@ const fileTypes = [
 function validFileType(file: File) {
     return fileTypes.includes(file.type);
 }
+/* ==================================== */
 
-type images = {
+/* =======이미지 파일 배열 reducer 함수 및 변수 타입 alias 설정======== */
+export type images = {
     name: string;
     type: string;
     size: number;
@@ -39,8 +44,9 @@ const reducer = (state: Array<images>, action: action): Array<images> => {
             throw new Error(`Unhandled Action Type ${action}`);
     }
 };
+/* =========================================================== */
 
-const Upload: React.FC = () => {
+function Upload() {
     const [images, dispatch] = React.useReducer(reducer, []);
     const fileInput = React.useRef<HTMLInputElement>(null);
     function onChange(e: React.ChangeEvent<HTMLInputElement>): void {
@@ -89,8 +95,13 @@ const Upload: React.FC = () => {
                 ))}
             </ul>
             <input type="file" onChange={onChange} multiple />
+            {images.length === 0 || (
+                <Provider>
+                    <UploadFrame />
+                </Provider>
+            )}
             <button>Submit</button>
         </div>
     );
-};
+}
 export default Upload;
